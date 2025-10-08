@@ -1,6 +1,6 @@
 replicaCount: 1
 image:
-  repository: app1
+  repository: docker.io/rajarammurali513/app1:~1
   tag: "1.1"
   pullPolicy: IfNotPresent
 service:
