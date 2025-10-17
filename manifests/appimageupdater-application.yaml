@@ -6,7 +6,7 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: appimageupdater=rajarammurali513/appimageupdater
     argocd-image-updater.argoproj.io/appimageupdater.update-strategy: semver
-    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd-image-updater-secret
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-secret
 spec:
   project: default
   source:
