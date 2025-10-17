@@ -6,6 +6,8 @@ metadata:
   annotations:
     argocd-image-updater.argoproj.io/image-list: appimageupdater=rajarammurali513/appimageupdater
     argocd-image-updater.argoproj.io/appimageupdater.update-strategy: semver
+    argocd-image-updater.argoproj.io/appimageupdater.helm.image-name: image.repository
+    argocd-image-updater.argoproj.io/appimageupdater.helm.image-tag: image.tag
     argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/argocd-image-updater-secret
     argocd-image-updater.argoproj.io/write-back-target: "helmvalues:charts\appimageupdater\values.yaml"
 spec:
