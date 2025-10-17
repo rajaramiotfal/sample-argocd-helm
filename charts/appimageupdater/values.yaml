@@ -1,4 +1,8 @@
-image:
-  repository: rajarammurali513/appimageupdater
-  tag: "0.2.0"
-  pullPolicy: IfNotPresent
+helm:
+  parameters:
+  - name: image.repository
+    value: rajarammurali513/appimageupdater
+    forcestring: true
+  - name: image.tag
+    value: 0.3.0
+    forcestring: true
