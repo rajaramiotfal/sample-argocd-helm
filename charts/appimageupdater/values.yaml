@@ -1,0 +1,4 @@
+image:
+  repository: rajarammurali513/appimageupdater
+  tag: "0.1.0"
+  pullPolicy: IfNotPresent

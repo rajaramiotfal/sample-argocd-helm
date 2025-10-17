@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appimageupdater
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: appimageupdater
+  template:
+    metadata:
+      labels:
+        app: appimageupdater
+    spec:
+      containers:
+      - name: appimageupdater
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        ports:
+        - containerPort: 8080

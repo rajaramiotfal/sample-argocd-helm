@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: appimageupdater
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: appimageupdater=rajarammurali513/appimageupdater
+    argocd-image-updater.argoproj.io/appimageupdater.update-strategy: semver
+    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd-image-updater-secret
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/rajaramioffal/argocd-image-updater.git
+    targetRevision: HEAD
+    path: charts/appimageupdater
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: imageupdater-ns
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
